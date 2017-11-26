@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>My little website</title>
+<style>
+$baseColor: #7f00ff;
+$borderRadius: 10px;
+$imageBig: 100px;
+$imageSmall: 60px;
+$padding: 10px;
+
+body {
+   background-color: lighten($baseColor, 30%);
+   * { box-sizing: border-box; }
+}
+
+.header {
+   background-color: darken($baseColor, 5%);
+   color: white;
+   font-size: 1.5em;
+   padding: 1rem;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+img {
+   border-radius: 50%;
+   height: $imageSmall;
+   width: $imageSmall;
+}
+
+.table-users {
+   border: 1px solid darken($baseColor, 5%);
+   border-radius: $borderRadius;
+   box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+   max-width: calc(100% - 2em);
+   margin: 1em auto;
+   overflow: hidden;
+   width: 800px;
+}
+
+table {
+   width: 100%;
+   
+   td, th { 
+      color: darken($baseColor, 10%);
+      padding: $padding; 
+   }
+   
+   td {
+      text-align: center;
+      vertical-align: middle;
+      
+      &:last-child {
+         font-size: 0.95em;
+         line-height: 1.4;
+         text-align: left;
+      }
+   }
+   
+   th { 
+      background-color: lighten($baseColor, 50%);
+      font-weight: 300;
+   }
+   
+   tr {     
+      &:nth-child(2n) { background-color: white; }
+      &:nth-child(2n+1) { background-color: lighten($baseColor, 55%) }
+   }
+}
+
+@media screen and (max-width: 700px) {   
+   table, tr, td { display: block; }
+   
+   td {
+      &:first-child {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: $imageBig;
+      }
+
+      &:not(:first-child) {
+         clear: both;
+         margin-left: $imageBig;
+         padding: 4px 20px 4px 90px;
+         position: relative;
+         text-align: left;
+
+         &:before {
+            color: lighten($baseColor, 30%);
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+         }
+      }
+      <th>Song title</th>
+    <th>Artist</th>
+    <th>Video link</th>
+    <th>Lyrics</th>
+    <th>Song leaders</th>
+    <th>Status</th>
+
+      &:nth-child(2):before { content: 'Artist'; }
+      &:nth-child(3):before { content: 'Video link'; }
+      &:nth-child(4):before { content: 'Lyrics'; }
+      &:nth-child(5):before { content: 'Song leaders'; }
+      &:nth-child(6):before { content: 'Status'; }
+   }
+   
+   tr {
+      padding: $padding 0;
+      position: relative;
+      &:first-child { display: none; }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header {
+      background-color: transparent;
+      color: lighten($baseColor, 60%);
+      font-size: 2em;
+      font-weight: 700;
+      padding: 0;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+   }
+   
+   img {
+      border: 3px solid;
+      border-color: lighten($baseColor, 50%);
+      height: $imageBig;
+      margin: 0.5rem 0;
+      width: $imageBig;
+   }
+   
+   td {
+      &:first-child { 
+         background-color: lighten($baseColor, 45%); 
+         border-bottom: 1px solid lighten($baseColor, 30%);
+         border-radius: $borderRadius $borderRadius 0 0;
+         position: relative;   
+         top: 0;
+         transform: translateY(0);
+         width: 100%;
+      }
+      
+      &:not(:first-child) {
+         margin: 0;
+         padding: 5px 1em;
+         width: 100%;
+         
+         &:before {
+            font-size: .8em;
+            padding-top: 0.3em;
+            position: relative;
+         }
+      }
+      
+      &:last-child  { padding-bottom: 1rem !important; }
+   }
+   
+   tr {
+      background-color: white !important;
+      border: 1px solid lighten($baseColor, 20%);
+      border-radius: $borderRadius;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+      margin: 0.5rem 0;
+      padding: 0;
+   }
+   
+   .table-users { 
+      border: none; 
+      box-shadow: none;
+      overflow: visible;
+   }
+}
+</style>
+
+</head>
+ <h1> Worship Songs</h1>
+ <table>
+  <tr>
+    <th>Song title</th>
+    <th>Artist</th>
+    <th>Video link</th>
+    <th>Lyrics</th>
+    <th>Song leaders</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>Bigger</td>
+    <td>Jekalyn Carr</td>
+    <td><a href="https://youtu.be/Z-ZV61eDLXI">video</td>
+    <td><a href="https://www.azlyrics.com/lyrics/jekalyncarr/yourebigger.html">lyric</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Great Sheppard</td>
+    <td>Raine</td>
+    <td><a href="https://youtu.be/KCZAk9X9p5k">video</td>
+    <td><a href="http://www.chordzone.org/2017/07/psalmist-raine-great-shepherd-chords.html?m=1#axzz4ypoNWYEI">lyric</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>You Waited</td>
+    <td>Travis Greene</td>
+    <td><a href="https://youtu.be/qnN9Zz6BBzs">video</td>
+    <td><a href="https://www.azlyrics.com/lyrics/travisgreene/youwaited.html">lyric</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>The Call</td>
+    <td>Isabel Davis</td>
+    <td><a href="https://youtu.be/aSW8ZcEldgQ">video</td>
+    <td><a href="https://gospellyr.blogspot.com/2017/10/the-call-lyrics-by-isabel-davis.html?m=1">lyric</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Great I Am</td>
+    <td>Larue Howsrd</td>
+    <td><a href="https://youtu.be/9WVVGby7zZs">video</td>
+    <td><a href="https://www.google.com/amp/s/www.musixmatch.com/lyrics/LaRue-Howard/Great-I-Am-There-s-No-One-Like-You/amp">lyric</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+</body>
+
+</htm
+
